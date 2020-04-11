@@ -46,6 +46,7 @@
             // 
             // resultTextBox
             // 
+            this.resultTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultTextBox.Location = new System.Drawing.Point(13, 41);
             this.resultTextBox.Multiline = true;
             this.resultTextBox.Name = "resultTextBox";
