@@ -83,11 +83,11 @@ namespace Andre_BrandaoTeodoro_Sec003_Exercise02
                 //define query for Highest Batting Average
                 var highestBattingAvg =
                         from player in dbContext.Players
-                        orderby player.LastName, player.FirstName
-                        select player.BattingAverage;
+                        orderby player.BattingAverage descending
+                        select new { player.LastName, player.FirstName, player.BattingAverage } ;
                 // display
-                playersBindingSource.DataSource = highestBattingAvg.ToList();
-                MessageBox.Show(highestBattingAvg.Max().ToString(),"Highest Batting Average",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                playersBindingSource.DataSource = highestBattingAvg.First();
+                MessageBox.Show($"{highestBattingAvg.First().FirstName} {highestBattingAvg.First().LastName} has the highest batting average","Highest Batting Average",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 // moves to first position in the grid
                 playersBindingSource.MoveFirst();
             }
