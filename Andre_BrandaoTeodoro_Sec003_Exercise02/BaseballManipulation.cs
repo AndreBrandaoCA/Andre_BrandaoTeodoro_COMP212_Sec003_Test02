@@ -44,6 +44,7 @@ namespace Andre_BrandaoTeodoro_Sec003_Exercise02
 
         private void showAllButton_Click(object sender, EventArgs e)
         {
+            searchByIdTextBox.Text = "";
             LoadDatabase();
         }
 
@@ -51,9 +52,10 @@ namespace Andre_BrandaoTeodoro_Sec003_Exercise02
         {
             try
             {
-                int id = Int32.Parse(searchByIdTextBox.Text);
+                
                 if (searchByIdTextBox.Text != "")
                 {
+                    int id = Int32.Parse(searchByIdTextBox.Text);
                     //define query for searchById
                     var byIdQuery =
                             from player in dbContext.Players
@@ -72,12 +74,13 @@ namespace Andre_BrandaoTeodoro_Sec003_Exercise02
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                MessageBox.Show(exc.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
         private void showHighBattingAvgButton_Click(object sender, EventArgs e)
         {
+            searchByIdTextBox.Text = "";
             try
             {
                 //define query for Highest Batting Average

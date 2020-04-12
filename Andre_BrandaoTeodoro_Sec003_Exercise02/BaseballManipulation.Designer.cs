@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseballManipulation));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.baseballDataGridView = new System.Windows.Forms.DataGridView();
             this.playerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,27 +55,30 @@
             this.searchByIdButton = new System.Windows.Forms.Button();
             this.showAllButton = new System.Windows.Forms.Button();
             this.showHighBattingAvgButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseballDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseballDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseballBindingNavigator)).BeginInit();
             this.baseballBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // baseballDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.baseballDataGridView.AllowUserToAddRows = false;
+            this.baseballDataGridView.AllowUserToDeleteRows = false;
+            this.baseballDataGridView.AutoGenerateColumns = false;
+            this.baseballDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.baseballDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.playerIDDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.battingAverageDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.playersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(447, 217);
-            this.dataGridView1.TabIndex = 0;
+            this.baseballDataGridView.DataSource = this.playersBindingSource;
+            this.baseballDataGridView.Location = new System.Drawing.Point(12, 68);
+            this.baseballDataGridView.Name = "baseballDataGridView";
+            this.baseballDataGridView.ReadOnly = true;
+            this.baseballDataGridView.Size = new System.Drawing.Size(447, 203);
+            this.baseballDataGridView.TabIndex = 0;
             // 
             // playerIDDataGridViewTextBoxColumn
             // 
@@ -233,7 +236,7 @@
             // searchPlayerById
             // 
             this.searchPlayerById.AutoSize = true;
-            this.searchPlayerById.Location = new System.Drawing.Point(13, 29);
+            this.searchPlayerById.Location = new System.Drawing.Point(13, 37);
             this.searchPlayerById.Name = "searchPlayerById";
             this.searchPlayerById.Size = new System.Drawing.Size(71, 13);
             this.searchPlayerById.TabIndex = 2;
@@ -241,14 +244,14 @@
             // 
             // searchByIdTextBox
             // 
-            this.searchByIdTextBox.Location = new System.Drawing.Point(90, 26);
+            this.searchByIdTextBox.Location = new System.Drawing.Point(90, 34);
             this.searchByIdTextBox.Name = "searchByIdTextBox";
             this.searchByIdTextBox.Size = new System.Drawing.Size(101, 20);
             this.searchByIdTextBox.TabIndex = 3;
             // 
             // searchByIdButton
             // 
-            this.searchByIdButton.Location = new System.Drawing.Point(197, 25);
+            this.searchByIdButton.Location = new System.Drawing.Point(197, 33);
             this.searchByIdButton.Name = "searchByIdButton";
             this.searchByIdButton.Size = new System.Drawing.Size(75, 23);
             this.searchByIdButton.TabIndex = 4;
@@ -258,7 +261,7 @@
             // 
             // showAllButton
             // 
-            this.showAllButton.Location = new System.Drawing.Point(278, 25);
+            this.showAllButton.Location = new System.Drawing.Point(278, 33);
             this.showAllButton.Name = "showAllButton";
             this.showAllButton.Size = new System.Drawing.Size(75, 23);
             this.showAllButton.TabIndex = 5;
@@ -268,7 +271,7 @@
             // 
             // showHighBattingAvgButton
             // 
-            this.showHighBattingAvgButton.Location = new System.Drawing.Point(359, 24);
+            this.showHighBattingAvgButton.Location = new System.Drawing.Point(359, 32);
             this.showHighBattingAvgButton.Name = "showHighBattingAvgButton";
             this.showHighBattingAvgButton.Size = new System.Drawing.Size(100, 23);
             this.showHighBattingAvgButton.TabIndex = 6;
@@ -287,11 +290,11 @@
             this.Controls.Add(this.searchByIdTextBox);
             this.Controls.Add(this.searchPlayerById);
             this.Controls.Add(this.baseballBindingNavigator);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.baseballDataGridView);
             this.Name = "BaseballManipulation";
             this.Text = "Ex02 - Baseball";
             this.Load += new System.EventHandler(this.BaseballManipulation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseballDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseballDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseballBindingNavigator)).EndInit();
@@ -304,7 +307,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView baseballDataGridView;
         private BaseballDataSet baseballDataSet;
         private System.Windows.Forms.BindingSource playersBindingSource;
         private BaseballDataSetTableAdapters.PlayersTableAdapter playersTableAdapter;
