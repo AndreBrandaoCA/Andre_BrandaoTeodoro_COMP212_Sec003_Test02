@@ -54,7 +54,7 @@ namespace Andre_BrandaoTeodoro_Sec003_Exercise02
                 int id = Int32.Parse(searchByIdTextBox.Text);
                 if (searchByIdTextBox.Text != "")
                 {
-                    //define query for players last name
+                    //define query for searchById
                     var byIdQuery =
                             from player in dbContext.Players
                             where player.PlayerID == id
@@ -80,13 +80,14 @@ namespace Andre_BrandaoTeodoro_Sec003_Exercise02
         {
             try
             {
-                //define query for players last name
+                //define query for Highest Batting Average
                 var highestBattingAvg =
                         from player in dbContext.Players
                         orderby player.LastName, player.FirstName
                         select player.BattingAverage;
                 // display
-                MessageBox.Show(highestBattingAvg.Max().ToString(),"Highes Batting Average",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                playersBindingSource.DataSource = highestBattingAvg.ToList();
+                MessageBox.Show(highestBattingAvg.Max().ToString(),"Highest Batting Average",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 // moves to first position in the grid
                 playersBindingSource.MoveFirst();
             }
